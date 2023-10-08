@@ -34,7 +34,7 @@ public interface IPessoaService {
      * Deleta uma Pessoa específica.
      * @param id - id da Pessoa que será removida.
      */
-    Pessoa delete(Long id);
+    String delete(Long id);
 
     /**
      * Pega todas as Pessoas do banco.

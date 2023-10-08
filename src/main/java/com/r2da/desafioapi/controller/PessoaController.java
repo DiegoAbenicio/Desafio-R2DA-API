@@ -32,7 +32,7 @@ public class PessoaController {
     }
 
     @DeleteMapping("/{id}")
-    public Pessoa delete(@PathVariable Long id){
+    public String delete(@PathVariable Long id){
         return service.delete(id);
     }
 
