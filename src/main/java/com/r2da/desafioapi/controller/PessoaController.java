@@ -4,6 +4,7 @@ import com.r2da.desafioapi.entity.Pessoa;
 import com.r2da.desafioapi.entity.form.PessoaForm;
 import com.r2da.desafioapi.entity.form.PessoaUpdateForm;
 import com.r2da.desafioapi.service.impl.PessoaServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,7 @@ public class PessoaController {
     }
 
     @PostMapping
-    public Pessoa create(@RequestBody PessoaForm form){
+    public Pessoa create(@Valid @RequestBody PessoaForm form){
         return  service.crete(form);
     }
 
@@ -37,7 +38,7 @@ public class PessoaController {
     }
 
     @PutMapping("/{id}")
-    public Pessoa update(@PathVariable Long id, @RequestBody PessoaUpdateForm updateForm){
+    public Pessoa update(@Valid @PathVariable Long id, @RequestBody PessoaUpdateForm updateForm){
         return service.update(id, updateForm);
     }
 
